@@ -63,7 +63,7 @@
           <input id="adresse" name="nom" placeholder="saint-martin" required><br><br>
 
           <label id="formadresse">Date </label><br>
-          <input type = "date" id="date" name="date" required><br><br>
+          <input type = "date" id="date" name="date" min="2020-08-29" required><br><br>
 
           <!-- pain au chocolat -->
           <label id="0">Pain au chocolat </label>
