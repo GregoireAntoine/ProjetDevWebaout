@@ -62,6 +62,8 @@
           <label id="formadresse">Nom </label><br>
           <input id="adresse" name="nom" placeholder="saint-martin" required><br><br>
 
+          <label id="formadresse">Date </label><br>
+          <input type = "date" id="date" name="date" required><br><br>
 
           <!-- pain au chocolat -->
           <label id="0">Pain au chocolat </label>
@@ -240,6 +242,23 @@ font-family:  "PT Sans","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira 
         cursor: pointer;
         color: rgb(228, 165, 83);
     }
+    #adresse{
+      border:1px solid grey;
+      border-radius: 2em;
+    }
+    fieldset{
+      border-radius:2em;
+      box-shadow:  0px 0px 10px rgb(121, 120, 120);
+      border:none;
+      margin-bottom:3em;
+      background:white;
+    }
+  body{
+    background:rgb(228, 165, 83);
+    padding:0;
+    margin:0;
+  }
+
         </style>
 
         </body>
@@ -264,8 +283,8 @@ font-family:  "PT Sans","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira 
 
 $bdd = new PDO('mysql:host=localhost;port=3307;dbname=toothy;charset=utf8', 'root', 'root');
 
-$requete = $bdd->prepare('INSERT INTO commande(nom, prenom, pac, croissant, pistolet, couque, brioche) VALUES (?,?,?,?,?,?,?)');
-$requete->execute(array($_GET['nom'],$_GET['prenom'],$_GET['pac'],$_GET['croissant'],$_GET['pistolet'],$_GET['couque'],$_GET['brioche']));
+$requete = $bdd->prepare('INSERT INTO commande(nom, prenom,date, pac, croissant, pistolet, couque, brioche) VALUES (?,?,?,?,?,?,?,?)');
+$requete->execute(array($_GET['nom'],$_GET['prenom'],$_GET['date'],$_GET['pac'],$_GET['croissant'],$_GET['pistolet'],$_GET['couque'],$_GET['brioche']));
 
 
 ?>
